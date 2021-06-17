@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Wall from './components/Wall'
+import Login from './components/Login'
+import Navbar from './components/Navbar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Holi Vane
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+
+const App = () => {
+  return ( 
+    <Router>
+      <div className= "container mt-3">
+
+        <Navbar/>
+
+        <Switch>
+          <Route component={Wall} path="/" exact/>
+          <Route component={Login} path="/login" exact/>
+        </Switch>
+      </div>
+    </Router>
+   );
 }
-
+ 
 export default App;
+
