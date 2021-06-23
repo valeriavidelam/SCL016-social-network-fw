@@ -1,6 +1,6 @@
 import React from 'react';
-//import AuthGoogle from '../Auth/AuthGoogle';
-import AuthEmail from './AuthEmail';
+import AuthGoogle from '../Auth/AuthGoogle';
+import AuthEmail from '../Auth/AuthEmail';
 
 const Login = () => {
     return ( 
@@ -9,7 +9,7 @@ const Login = () => {
             <hr/>
             <div className="row justify-content-center">
               <div className="d-block gap-2 mt-5">
-                {/* <AuthGoogle/> */}
+                <AuthGoogle/> 
                 <button 
                 className="btn btn-danger btn-block"
                 onClick={ (AuthEmail) }>

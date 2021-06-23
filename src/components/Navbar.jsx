@@ -2,22 +2,15 @@ import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 
 const Navbar = () => {
-    return (
-        <div className="navbar navbar-dark bg-dar">
-            <Link className="navbar-brand" to="/">CHIN-CHIN</Link>
-            <div>
-                <div className="d-flex">
-                    <NavLink className="btn btn-dar mr-2" to="/" exact>
-                        Inicio
-                    </NavLink>
-                    <NavLink className="btn btn-dar mr-2" to="/admin">
-                        Admin
-                    </NavLink>
-                    <NavLink className="btn btn-dar mr-2" to="/AuthEmail">
-                        Login
-                    </NavLink>
-                </div>
-            </div>            
+    return ( 
+        <div className= "navbar navbar-dark bg-dark">
+            <Link className="navbar-brand" to="/">CHIN·CHIN</Link>
+            <div className="d-flex">
+                <NavLink className="btn btn-dark mr-2" to="/home" exact> Home</NavLink>
+                <NavLink className="btn btn-dark mr-2" to="/profile" exact> Profile </NavLink>
+                <NavLink className="btn btn-dark mr-2" to="/" exact> Login</NavLink>
+                <button className="btn btn-dark mr-2"> Logout</button>
+            </div>
         </div>
     )
 }
