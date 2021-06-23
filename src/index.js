@@ -8,7 +8,6 @@ import 'firebase/auth';
 
 
 ReactDOM.render(
-
   <React.StrictMode>
     <Suspense fallback={"Loading..."}> 
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
