@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 
-
 const Navbar = () => {
     return ( 
         <div className= "navbar navbar-dark bg-dark">
@@ -13,7 +12,7 @@ const Navbar = () => {
                 <button className="btn btn-dark mr-2"> Logout</button>
             </div>
         </div>
-     );
+    )
 }
- 
-export default Navbar;
+
+export default Navbar

@@ -11,6 +11,7 @@ function SignInForm () {
             //Avoid redirects after sign-in.
             signInSuccessWithAuthResult: () => {
                 console.log('Started successfully')
+                //Acá debo redireccionar al Home
             },
         },
     };

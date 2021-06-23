@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import './index.css'; 
 import { FirebaseAppProvider } from 'reactfire';
-import { firebaseConfig } from './firebase'
-import "firebase/auth"
+import { firebaseConfig } from './firebase';
+import 'firebase/auth';
 
 
 ReactDOM.render(
