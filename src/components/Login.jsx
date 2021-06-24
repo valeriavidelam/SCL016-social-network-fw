@@ -10,11 +10,7 @@ const Login = () => {
             <div className="row justify-content-center">
               <div className="d-block gap-2 mt-5">
                 <AuthGoogle/> 
-                <button 
-                className="btn btn-danger btn-block"
-                onClick={ (AuthEmail) }>
-                 Sign in with mail
-                </button>
+                <AuthEmail/>
               </div>
             </div>
         </div>
