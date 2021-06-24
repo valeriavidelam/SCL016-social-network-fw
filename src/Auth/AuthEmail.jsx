@@ -1,6 +1,6 @@
 import React from 'react';
-import firebase from '../firebase';
-import { firebaseConfig } from './firebase';
+//import firebase from '../firebase';
+//import { firebaseConfig } from './firebase';
 //import firebase from 'firebase/app';
 //import 'firebase/firestore';
 //import 'firebase/auth';
@@ -13,7 +13,7 @@ const AuthEmail = () => {
     const [isRegistration, setIsRegistration] = React.useState('true')
     //const db = firebase.firestore()
     
-    const auth = firebase.auth()
+    //const auth = firebase.auth()
 
     const toProcessData = e => {
         e.preventDefault()
@@ -36,24 +36,24 @@ const AuthEmail = () => {
         //console.log('Pasando todas la validaciones1')        
         setError('null')
 
-        if(isRegistration){
-            toRegister()
-        }
+        // if(isRegistration){
+        //     toRegister()
+        // }
 
     }
 
-    const toRegister = React.useCallback(async() => {
+    // const toRegister = React.useCallback(async() => {
 
-        try {
-            await auth.createUserWithEmailAndPassword(email, pass)
-            //console.log(answer)
+    //     try {
+    //         await auth.createUserWithEmailAndPassword(email, pass)
+    //         console.log(answer)
 
-        } catch (error) {
-            console.log(error)
-            setError(error.mens)
-        }
+    //     } catch (error) {
+    //         console.log(error)
+    //         setError(error.mens)
+    //     }
 
-    }, [email, pass])
+    // }, [email, pass])
 
     return (
         <div className="mt-5">
