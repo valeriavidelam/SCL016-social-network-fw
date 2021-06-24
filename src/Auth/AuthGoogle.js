@@ -1,6 +1,7 @@
 import React from 'react'
 import { SuspenseWithPerf, useAuth } from 'reactfire'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
+import {withRouter} from 'react-router-dom'
 
 function SignInForm () {
     const auth =  useAuth;
@@ -29,4 +30,4 @@ function AuthGoogle() {
     );
 }
 
-export default AuthGoogle;
+export default withRouter(AuthGoogle)
