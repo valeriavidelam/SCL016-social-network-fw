@@ -1,4 +1,9 @@
-import React from 'react'
+import React from 'react';
+import firebase from '../firebase';
+import { firebaseConfig } from './firebase';
+//import firebase from 'firebase/app';
+//import 'firebase/firestore';
+//import 'firebase/auth';
 
 const AuthEmail = () => {
 
@@ -6,6 +11,9 @@ const AuthEmail = () => {
     const [pass, setPass] = React.useState('')
     const [error, setError] = React.useState('null')
     const [isRegistration, setIsRegistration] = React.useState('true')
+    //const db = firebase.firestore()
+    
+    const auth = firebase.auth()
 
     const toProcessData = e => {
         e.preventDefault()
@@ -25,9 +33,27 @@ const AuthEmail = () => {
             return
         }
 
+        //console.log('Pasando todas la validaciones1')        
         setError('null')
-        console.log('Pasando todas la validaciones1')        
+
+        if(isRegistration){
+            toRegister()
+        }
+
     }
+
+    const toRegister = React.useCallback(async() => {
+
+        try {
+            await auth.createUserWithEmailAndPassword(email, pass)
+            //console.log(answer)
+
+        } catch (error) {
+            console.log(error)
+            setError(error.mens)
+        }
+
+    }, [email, pass])
 
     return (
         <div className="mt-5">
@@ -41,11 +67,11 @@ const AuthEmail = () => {
                 <div className="col-12 col-sm-8 col-md-6 col xl-4">
                     <form onSubmit={toProcessData}>
                         {
-                            error && (
+                            error ? (
                                 <div className="alert alert-danger">
                                     {error}
                                 </div>
-                            )
+                            ) : null
                         }
                         <input 
                             type="email" 
@@ -82,4 +108,5 @@ const AuthEmail = () => {
     )
 }
 
-export default AuthEmail
+//export {db, auth}
+export default AuthEmail 
