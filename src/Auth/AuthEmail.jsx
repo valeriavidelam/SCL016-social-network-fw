@@ -46,7 +46,7 @@ const AuthEmail = () => {
 
         } catch (error) {
             //console.log(error)
-            setError(error)
+            setError(error.message)
         }
 
     },[auth, email, pass])
