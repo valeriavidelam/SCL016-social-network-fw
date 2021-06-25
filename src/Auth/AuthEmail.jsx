@@ -1,19 +1,15 @@
 import React from 'react';
-//import firebase from '../firebase';
-//import { firebaseConfig } from './firebase';
-//import firebase from 'firebase/app';
-//import 'firebase/firestore';
-//import 'firebase/auth';
+import firebase from 'firebase/app';
 
 const AuthEmail = () => {
 
     const [email, setEmail] = React.useState('')
     const [pass, setPass] = React.useState('')
-    const [error, setError] = React.useState('null')
+    const [error, setError] = React.useState(null)
     const [isRegistration, setIsRegistration] = React.useState('true')
     //const db = firebase.firestore()
-    
-    //const auth = firebase.auth()
+    const auth = firebase.auth()
+
 
     const toProcessData = e => {
         e.preventDefault()
@@ -34,26 +30,26 @@ const AuthEmail = () => {
         }
 
         //console.log('Pasando todas la validaciones1')        
-        setError('null')
+        setError(null)
 
-        // if(isRegistration){
-        //     toRegister()
-        // }
+        if(isRegistration){
+            toRegister()
+        }
 
     }
 
-    // const toRegister = React.useCallback(async() => {
+    const toRegister = React.useCallback(async() => {
 
-    //     try {
-    //         await auth.createUserWithEmailAndPassword(email, pass)
-    //         console.log(answer)
+        try {
+            const answer = await auth.createUserWithEmailAndPassword(email, pass)
+            console.log(answer)
 
-    //     } catch (error) {
-    //         console.log(error)
-    //         setError(error.mens)
-    //     }
+        } catch (error) {
+            //console.log(error)
+            setError(error)
+        }
 
-    // }, [email, pass])
+    },[auth, email, pass])
 
     return (
         <div className="mt-5">
@@ -64,7 +60,7 @@ const AuthEmail = () => {
             </h3>
             <hr />
             <div className="row justify-content-center">
-                <div className="col-12 col-sm-8 col-md-6 col xl-4">
+                <div className="col-12 col-sm-8 col-md-6 col-xl-4">
                     <form onSubmit={toProcessData}>
                         {
                             error ? (
@@ -87,13 +83,13 @@ const AuthEmail = () => {
                             onChange={e => setPass(e.target.value)}
                             value={pass} 
                         />
-                        <button className="btn btn-dar btn-lg btn-block" type="submit">
+                        <button className="btn btn-dark btn-lg btn-block" type="submit">
                             {
                                 isRegistration ? 'Check in' : 'To access'
                             }
                         </button>
                         <button 
-                        className="btn bt -info btn-sm btn-block"
+                        className="btn btn-info btn-sm btn-block"
                         onClick={() => setIsRegistration(!isRegistration)}
                         type="button"
                         >
@@ -108,5 +104,4 @@ const AuthEmail = () => {
     )
 }
 
-//export {db, auth}
 export default AuthEmail 
