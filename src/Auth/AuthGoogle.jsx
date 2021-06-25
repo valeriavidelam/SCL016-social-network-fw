@@ -1,9 +1,11 @@
 import React from 'react'
 import { SuspenseWithPerf, useAuth } from 'reactfire'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
-import {withRouter} from 'react-router-dom'
+import {withRouter, useHistory} from 'react-router-dom'
 
 function SignInForm () {
+    let history = useHistory ();
+
     const auth =  useAuth;
     const uiConfig = {
         signInFlow: "popup",
@@ -11,8 +13,9 @@ function SignInForm () {
         callbacks: {
             //Avoid redirects after sign-in.
             signInSuccessWithAuthResult: () => {
-                console.log('Started successfully')
-                //Acá debo redireccionar al Home
+                //console.log('Started successfully')
+                history.push("/home");
+                
             },
         },
     };
