@@ -1,5 +1,6 @@
 import React from 'react';
 import firebase from 'firebase/app';
+import {withRouter, useHistory} from 'react-router-dom';
 
 const AuthEmail = () => {
 
@@ -9,6 +10,7 @@ const AuthEmail = () => {
     const [isRegistration, setIsRegistration] = React.useState('true')
     //const db = firebase.firestore()
     const auth = firebase.auth()
+    let history = useHistory ();
 
 
     const toProcessData = e => {
@@ -37,19 +39,21 @@ const AuthEmail = () => {
         }
 
     }
-
+    
     const toRegister = React.useCallback(async() => {
+        
 
         try {
             const answer = await auth.createUserWithEmailAndPassword(email, pass)
             console.log(answer)
+            history.push("/home");
 
         } catch (error) {
             //console.log(error)
             setError(error.message)
         }
 
-    },[auth, email, pass])
+    },[auth, email, history, pass])
 
     return (
         <div className="mt-5">
@@ -104,4 +108,4 @@ const AuthEmail = () => {
     )
 }
 
-export default AuthEmail 
+export default withRouter(AuthEmail)
