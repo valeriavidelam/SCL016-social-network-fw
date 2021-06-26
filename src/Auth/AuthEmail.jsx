@@ -20,7 +20,7 @@ const AuthEmail = () => {
         }
         if(!pass.trim()){
             //console.log('Enter Paswword')
-            setError('Enter Paswword')
+            setError('Enter Password')
             return
         }
         if(pass.length < 6){
