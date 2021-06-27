@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from 'firebase/app';
-import {withRouter, useHistory} from 'react-router-dom';
+import {withRouter, useHistory, } from 'react-router-dom';
+
 
 const AuthEmail = () => {
 
@@ -8,7 +9,6 @@ const AuthEmail = () => {
     const [pass, setPass] = React.useState('')
     const [error, setError] = React.useState(null)
     const [isRegistration, setIsRegistration] = React.useState('true')
-    //const db = firebase.firestore()
     const auth = firebase.auth()
     let history = useHistory ();
 
@@ -30,7 +30,6 @@ const AuthEmail = () => {
             setError('Password of 6 characters or more')
             return
         }
-
         //console.log('Pasando todas la validaciones1')        
         setError(null)
 
@@ -42,15 +41,26 @@ const AuthEmail = () => {
     
     const toRegister = React.useCallback(async() => {
         
-
         try {
             const answer = await auth.createUserWithEmailAndPassword(email, pass)
-            console.log(answer)
+            console.log(answer.user)
+            await firebase.firestore().collection('users').doc(answer.user.email).set({
+                email: answer.user.email,
+                uid: answer.user.uid
+            })
+            setEmail('')
+            setPass('')
+            setError(null)
             history.push("/home");
 
         } catch (error) {
-            //console.log(error)
-            setError(error.message)
+            console.log(error)
+            if(error.code === 'auth/invalid-email'){
+                setError('invalid email')
+            }
+            if(error.code === 'auth/email-already-in-use'){
+                setError('email already registered')
+            }
         }
 
     },[auth, email, history, pass])

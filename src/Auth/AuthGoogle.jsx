@@ -1,7 +1,8 @@
-import React from 'react'
-import { SuspenseWithPerf, useAuth } from 'reactfire'
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
-import {withRouter, useHistory} from 'react-router-dom'
+import React from 'react';
+import { SuspenseWithPerf, useAuth } from 'reactfire';
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import {withRouter, useHistory} from 'react-router-dom';
+import 'firebase/firestore';
 
 function SignInForm () {
     let history = useHistory ();
