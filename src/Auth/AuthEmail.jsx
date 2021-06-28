@@ -12,7 +12,6 @@ const AuthEmail = () => {
     const auth = firebase.auth()
     let history = useHistory ();
 
-
     const toProcessData = e => {
         e.preventDefault()
         if(!email.trim()){
@@ -35,9 +34,28 @@ const AuthEmail = () => {
 
         if(isRegistration){
             toRegister()
+        }else{
+            toAccess()
         }
-
     }
+
+    const toAccess = React.useCallback( async () => {
+        try {
+            const answer =await auth.signInWithEmailAndPassword(email, pass)
+            console.log(answer.user)
+        } catch (error) {
+            console.log(error)
+            if(error.code === 'auth/invalid-email'){
+                setError('invalid email')
+            }
+            if(error.code === 'auth/user-not-found'){
+                setError('email not registered')
+            }
+            if(error.code === 'auth/wrong-password'){
+                setError('wrong password')
+            }
+        }
+    }, [auth, email, pass])
     
     const toRegister = React.useCallback(async() => {
         
