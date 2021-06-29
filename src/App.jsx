@@ -3,66 +3,32 @@ import Login from './components/Login'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Home from './components/Home';
-import firebase from 'firebase/app';
 
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
 } from 'react-router-dom';
 
 
 
 function App() {
 
-  const [firebaseUser, setFirebaseUser] = React.useState(false)
-  
-  
-  React.useEffect(() => {
-  const auth = firebase.auth()
-  const fetchUser = () => {
-    
-    auth.onAuthStateChanged(user => {
-      console.log(user)
-      if(user){
-        setFirebaseUser(user)
-      }else{
-        setFirebaseUser(null)
-      }
-    })
-  }
-  fetchUser()
-}, [])
-
-const PrivateRoute = ({component,path, ...rest}) => {
-  if(localStorage.getItem('user')){
-    const userStorage = JSON.parse(localStorage.getItem('user'))
-    if(userStorage.uid === firebaseUser.uid){
-      return <Route component={component} path={path} {...rest} />
-    }else{
-      return <Redirect to="/" {...rest} />
-    }
-  }else{
-    return <Redirect to="/" {...rest} />
-  }
-}
-
-  return firebaseUser !== false ? (
+  return  (
     <Router>
       <div className= "container mt-3">
         
         <Navbar/>
         
         <Switch>
-          <PrivateRoute component={Home} path="/home" exact/>
-          <PrivateRoute component={Profile} path="/profile" exact/>
+          <Route component={Home} path="/home" exact/>
+          <Route component={Profile} path="/profile" exact/>
           <Route component={Login} path="/" exact/>
         </Switch>
       </div>
     </Router>
-      ) : (<div>Loading...</div>)
+  );
 }
 
 export default App;
