@@ -4,23 +4,18 @@ import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Home from './components/Home';
 
-
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route
 } from 'react-router-dom';
 
 
-
-function App() {
-
-  return  (
+const App = () => {
+  return ( 
     <Router>
       <div className= "container mt-3">
-        
         <Navbar/>
-        
         <Switch>
           <Route component={Home} path="/home" exact/>
           <Route component={Profile} path="/profile" exact/>
