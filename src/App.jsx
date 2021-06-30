@@ -3,6 +3,7 @@ import Login from './components/Login'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Home from './components/Home';
+import firebase from 'firebase/app';
 
 import {
   BrowserRouter as Router,
@@ -12,10 +13,25 @@ import {
 
 
 const App = () => {
-  return ( 
+
+  const [firebaseUser, setFirebaseUser] = React.useState(false)
+
+  React.useEffect(() => {
+    firebase.auth().onAuthStateChanged(user => {
+      console.log(user)
+      if(user){
+        setFirebaseUser(user)
+      }else{
+        setFirebaseUser(null)
+      }
+    })
+
+  }, [])
+
+  return firebaseUser !== false ? ( 
     <Router>
       <div className= "container mt-3">
-        <Navbar/>
+        <Navbar firebaseUser={firebaseUser} />
         <Switch>
           <Route component={Home} path="/home" exact/>
           <Route component={Profile} path="/profile" exact/>
@@ -23,7 +39,9 @@ const App = () => {
         </Switch>
       </div>
     </Router>
-  );
+  ) : (
+    <p>Cargando ...</p>
+  )
 }
 
 export default App;
