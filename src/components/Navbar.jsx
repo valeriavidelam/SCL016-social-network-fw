@@ -2,6 +2,7 @@ import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 
 
+
 const Navbar = () => {
     return ( 
         
@@ -11,7 +12,7 @@ const Navbar = () => {
                      <NavLink className="btn btn-dark mr-2" to="/home" exact> Home</NavLink>
                      <NavLink className="btn btn-dark mr-2" to="/profile" exact> Profile </NavLink>
                      <NavLink className="btn btn-dark mr-2" to="/" exact> Login</NavLink>
-                     <NavLink className="btn btn-dark mr-2" to="/" exact> Logout</NavLink>
+                     <button className="btn btn-dark mr-2" to="/" exact> Logout</button>
                 </div>
             </div>
         

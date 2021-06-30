@@ -31,6 +31,5 @@ yarn-error.log*
 /src/firebase.js
 =======
 
-src/firebase.js
->>>>>>> f09df713b6915dfe413d3a275fb47ddd8a5c2062
->>>>>>> 28ff7927879e7d09dedbebac5a449d14d2607d94
+
+
