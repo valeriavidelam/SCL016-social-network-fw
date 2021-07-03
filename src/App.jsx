@@ -40,7 +40,7 @@ const App = () => {
       </div>
     </Router>
   ) : (
-    <p>Cargando ...</p>
+    <p>Loading ChinChin...</p>
   )
 }
 

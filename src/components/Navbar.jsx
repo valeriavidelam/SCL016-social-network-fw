@@ -11,7 +11,7 @@ const Navbar = (props) => {
     const SignOff = () => {
         firebase.auth().signOut()
             .then(() => {
-                console.log('esta funcionando')
+                console.log('successfully completed')
                 props.history.push('/')
             })
     }

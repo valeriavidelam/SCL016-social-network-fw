@@ -7,10 +7,10 @@ import { withRouter, } from 'react-router';
 
 const Home = () => {
 
-   const saludo = 'Probando texto con Variable, este es el muro'
+   const saludo = 'Do you want to say something?'
 
     return ( 
-        <div className='mt-5'>
+        <div className='mt-5 text-center'>
            <h2> {saludo} </h2>
            <Posts />
         </div>

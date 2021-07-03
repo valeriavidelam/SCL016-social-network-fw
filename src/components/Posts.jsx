@@ -1,5 +1,5 @@
 import React from 'react';
-
+import shortid from 'shortid'; //este se elimina cuando ponga el de firebase
  /*const Posts = (props) => {
 
     const {image, title,text} = props
@@ -20,44 +20,76 @@ import React from 'react';
 function Posts() {
 
     const [post, setPost] = React.useState('')
+    const [posts,setPosts] = React.useState([])
 
     const addPost = e => {
         e.preventDefault()
-        if(!post.trim()){
-            console.log("Empty post")
+        if(!post.trim()){(
+            alert("Empty post")
+        );
             return
         }
         console.log(post)
+
+        setPosts([
+            ...posts,
+            {id: shortid.generate(), namePost:post}
+            //Acá hay que reemplazar el id de shortid.generate por el de firebase
+            //este fue hecho mientras para generar los posts
+        ])
+
        setPost('')
     }
 
+    const deletePost = id => {
+        const arrayFilter = posts.filter(item => item.id !== id)
+        setPosts(arrayFilter)
+    }
+        
     return (
         <div className= "container mt-5">
-            <h1 className="text-center"> Your Wall</h1>
+            <h1 className="text-center"> NEW POST</h1>
             <hr/>
-            <div className="row">
-                <div className="col-8">
-                    <h4 className="text-center">Lista de  Comentarios</h4>
-                    <ul className="list-group">
-                        <li className="list-group-item">
-                            <span className="lead"> Your last post</span>
-                            <button className="btn btn-danger btn-sm float-right mx-2">Remove</button>
-                            <button className="btn btn-warning btn-sm float-right">Edite</button>
-                        </li>
-                    </ul>
+            <div className="row-3">
+                <div className="col-13 px-md-5">
+                     <form onSubmit={addPost}>
+                     
+                         <input 
+                         type="text" 
+                         className="form-control mb-2"
+                         placeholder="Write here your post and Chinchin!"
+                         onChange={ e => setPost(e.target.value)}
+                         value={post}
+                         />
+                         <button className="btn btn-dark btn-block float-right" type="submit">SEND</button>
+                     </form>
                 </div>
-                <div className="col-4">
-                    <h4 className="text-center">Formulario</h4>
-                    <form onSubmit={addPost}>
-                        <input 
-                        type="text" 
-                        className="form-control mb-2"
-                        placeholder="Write new post"
-                        onChange={ e => setPost(e.target.value)}
-                        value={post}
-                        />
-                        <button className="btn btn-dark btn-block" type="submit">New post</button>
-                    </form>
+                <hr/>
+                <div className="col px-md-5">
+                    <h4 className="text-center">MOST RECENTLY</h4>
+                    <ul className="list-group">
+                        {
+                            posts.map(item => (
+                                <li className="list-group-item" key={item.id}>
+                                <span className="lead"> {item.namePost}</span>
+                                <button 
+                                className="btn btn-danger btn-sm float-right mx-2"
+                                //onClick={() =>}
+                                >
+                                    EDIT
+                                </button>
+                                <button 
+                                className="btn btn-warning btn-sm float-right"
+                                onClick={() => deletePost(item.id)}
+                                >
+                                     DELETE
+                                </button>
+                            </li>        
+                            ))
+                        }
+
+
+                    </ul>
                 </div>
             </div>
         </div>
