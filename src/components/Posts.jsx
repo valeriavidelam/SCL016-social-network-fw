@@ -1,5 +1,6 @@
 import React from 'react';
 import {firebase} from '../firebase';
+import {BsHeartFill} from 'react-icons/bs';
  
 
 function Posts() {
@@ -9,6 +10,7 @@ function Posts() {
     const [editMode, setEditMode] = React.useState(false)
     const [id, setId] = React.useState('')
     const [error, setError] = React.useState(null)
+    const [like, setLike] = React.useState(0)
 
     React.useEffect(() => { 
         const obtainData = async () => {
@@ -44,7 +46,9 @@ function Posts() {
             const db = firebase.firestore()
             const newPost =  {
                 name: post,
+                like: like,
                 date: Date.now()
+                
             }
             const data = await db.collection('posts').add(newPost)
 
@@ -82,6 +86,7 @@ function Posts() {
        setEditMode(true)
        setPost(item.name)
        setId(item.id)
+       setLike(item.like)
    }
 
    const edit = async (e) => {
@@ -98,18 +103,50 @@ function Posts() {
             name: post
         })
         const arrayEdit = posts.map(item => (
-            item.id === id ? {id:item.id, date: item.date, name: post} : item
+            item.id === id ? {id:item.id, date: item.date, name: post, like: like} : item
         ))
         setPosts(arrayEdit)
         setEditMode(false)
         setPost('')
         setId('')
         setError(null)
+        setLike(0)
 
     } catch (error) {
         console.log(error)
     }
    }
+
+    const giveLike = (item) => {
+        //console.log('click')
+        setLike(like + 1)
+    }
+
+  //const giveLike = async (e) => {
+  // 
+  // if(!post.trim()){
+  //     console.log(error)
+  //     return
+  // }
+  // try {
+  //     const db = firebase.firestore()
+  //     await db.collection('posts').doc(id).update({
+  //         like: like
+  //     })
+  //     const arrayEdit = posts.map(item => (
+  //         item.id === id ? {id:item.id, date: item.date, name: post, like: like} : item
+  //     ))
+  //     setPosts(arrayEdit)
+  //     setEditMode(false)
+  //     setPost('')
+  //     setId('')
+  //     setError(null)
+  //     setLike(like + 1)
+
+  // } catch (error) {
+  //     console.log(error)
+  // }
+  //    }
 
     return (
         <div className="container mt-5">
@@ -158,6 +195,13 @@ function Posts() {
                                         <li className="list-group-item" key={item.id}>
                                         {item.name}
                                     
+                                        <button 
+                                        className="btn btn-default mx-2"
+                                        onClick={() => giveLike(item)}
+                                        >
+                                           <BsHeartFill/> {like}
+                                        </button>
+                                        
                                         <button 
                                         className="btn btn-warning btn-sm float-right"
                                         onClick={() => activateEdition(item)}
