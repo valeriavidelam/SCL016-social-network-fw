@@ -87,7 +87,7 @@ const AuthEmail = () => {
         <div className="mt-5">
             <h3 className="text-center">
                 {
-                    isRegistration ? 'User register' : 'Access AuthEmail'
+                    isRegistration ? 'or' : 'Access AuthEmail'
                 }
             </h3>
             <hr />

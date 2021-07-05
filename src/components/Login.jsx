@@ -1,16 +1,17 @@
 import React from 'react';
 import AuthGoogle from '../Auth/AuthGoogle';
 import AuthEmail from '../Auth/AuthEmail';
+import logo from '../assets/Images/logos/logo.png';
 
 
 const Login = () => {
     return ( 
         <div className="mt-5 text-center">
             
-            <h3 className="text-center">LOGO CHINCHIN</h3>
-            <hr/>
+            <img src={logo} alt="logo-chinchin"/>
+            
             <div className="row justify-content-center">
-              <div className="d-block gap-2 mt-5">
+              <div className="d-block gap-2">
                 <AuthGoogle/> 
                 <AuthEmail/>
               </div>

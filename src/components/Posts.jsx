@@ -1,6 +1,7 @@
 import React from 'react';
 import {firebase} from '../firebase';
 import {BsHeartFill} from 'react-icons/bs';
+
  
 
 function Posts() {
@@ -122,6 +123,7 @@ function Posts() {
         setLike(like + 1)
     }
 
+
   //const giveLike = async (e) => {
   // 
   // if(!post.trim()){
@@ -203,7 +205,7 @@ function Posts() {
                                         </button>
                                         
                                         <button 
-                                        className="btn btn-warning btn-sm float-right"
+                                        className="btn btn-success btn-sm float-right"
                                         onClick={() => activateEdition(item)}
                                         >
                                             EDIT
@@ -213,7 +215,7 @@ function Posts() {
                                         onClick={() => deletePost(item.id)}
                                         >
                                             DELETE
-                                        </button>
+                                        </button> 
                                     </li>
 
                                 ))
