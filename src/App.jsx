@@ -1,7 +1,7 @@
 import React from 'react';
-import Login from './components/Login'
-import Navbar from './components/Navbar'
-import Profile from './components/Profile'
+import Login from './components/Login';
+import Navbar from './components/Navbar';
+import Profile from './components/Profile';
 import Home from './components/Home';
 import firebase from 'firebase/app';
 
@@ -21,12 +21,19 @@ const App = () => {
       console.log(user)
       if(user){
         setFirebaseUser(user)
+        // eslint-disable-next-line no-lone-blocks
+        // {
+        //   eslint-disable-next-line no-unused-expressions
+        //   firebaseUser !== null ? ('history.push{"/Home", "/profile" }') :
+        //   ('history.push{Login}')
+
+        // }
       }else{
         setFirebaseUser(null)
       }
     })
 
-  }, [])
+  }, [firebaseUser])
 
   return firebaseUser !== false ? ( 
     <Router>
