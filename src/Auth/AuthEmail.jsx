@@ -16,12 +16,12 @@ const AuthEmail = () => {
         e.preventDefault()
         if(!email.trim()){
             //console.log('Enter email')
-            setError('Enter email')
+            setError('You must enter an email!')
             return
         }
         if(!pass.trim()){
             //console.log('Enter Paswword')
-            setError('Enter Password')
+            setError('You must enter an password!')
             return
         }
         if(pass.length < 6){
@@ -74,10 +74,10 @@ const AuthEmail = () => {
         } catch (error) {
             console.log(error)
             if(error.code === 'auth/invalid-email'){
-                setError('invalid email')
+                setError('Invalid email')
             }
             if(error.code === 'auth/email-already-in-use'){
-                setError('email already registered')
+                setError('Email already registered')
             }
         }
 
@@ -85,11 +85,11 @@ const AuthEmail = () => {
 
     return (
         <div className="mt-5">
-            <h3 className="text-center">
+            <h6 className="text-center">
                 {
-                    isRegistration ? 'or' : 'Access AuthEmail'
+                    isRegistration ? 'CREATE NEW ACCOUNT' : 'Login'
                 }
-            </h3>
+            </h6>
             <hr />
             <div className="row justify-content-center">
                 <div className="col-12 col-sm-8 col-md-6 col-xl-4">
@@ -115,18 +115,18 @@ const AuthEmail = () => {
                             onChange={e => setPass(e.target.value)}
                             value={pass} 
                         />
-                        <button className="btn btn-dark btn-lg btn-block mx-2" type="submit">
+                        <button className="btn btn-success btn-lg btn-block mx-2" type="submit">
                             {
-                                isRegistration ? 'Check in' : 'To access'
+                                isRegistration ? 'SIGN UP' : 'LOG IN'
                             }
                         </button>
                         <button 
-                        className="btn btn-danger btn-sm btn-block"
+                        className="btn btn-dark btn-sm btn-block"
                         onClick={() => setIsRegistration(!isRegistration)}
                         type="button"
                         >
                             {
-                                isRegistration ? 'You are already registered' : 'Create Account'
+                                isRegistration ? 'Already registered?' : 'New here?'
                             }
                         </button>
                     </form>
