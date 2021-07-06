@@ -87,7 +87,7 @@ const AuthEmail = () => {
         <div className="mt-5">
             <h3 className="text-center">
                 {
-                    isRegistration ? 'User register' : 'Access AuthEmail'
+                    isRegistration ? 'or' : 'Access AuthEmail'
                 }
             </h3>
             <hr />
@@ -115,13 +115,13 @@ const AuthEmail = () => {
                             onChange={e => setPass(e.target.value)}
                             value={pass} 
                         />
-                        <button className="btn btn-dark btn-lg btn-block" type="submit">
+                        <button className="btn btn-dark btn-lg btn-block mx-2" type="submit">
                             {
                                 isRegistration ? 'Check in' : 'To access'
                             }
                         </button>
                         <button 
-                        className="btn btn-info btn-sm btn-block"
+                        className="btn btn-danger btn-sm btn-block"
                         onClick={() => setIsRegistration(!isRegistration)}
                         type="button"
                         >
