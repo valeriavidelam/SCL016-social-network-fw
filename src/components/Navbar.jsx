@@ -14,6 +14,9 @@ const Navbar = (props) => {
                 console.log('esta funcionando')
                 props.history.push('/')
             })
+            .catch(() => {
+                console.log('Por favor intenta de nuevo')
+            })
     }
 
     return ( 
