@@ -1,34 +1,32 @@
 import React from 'react';
-import Login from './components/Login'
-import Navbar from './components/Navbar'
-import Profile from './components/Profile'
+import Login from './components/Login';
+import Navbar from './components/Navbar';
+import Profile from './components/Profile';
 import Home from './components/Home';
 import firebase from 'firebase/app';
 
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
 } from 'react-router-dom';
 
 
 const App = () => {
-
-  const [firebaseUser, setFirebaseUser] = React.useState(false)
+  const [firebaseUser, setFirebaseUser] = React.useState(false);
 
   React.useEffect(() => {
-    firebase.auth().onAuthStateChanged(user => {
-      console.log(user)
-      if(user){
-        setFirebaseUser(user)
-      }else{
-        setFirebaseUser(null)
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        setFirebaseUser(user);
+      } else {
+        setFirebaseUser(null);
       }
-    })
+    });
+  }, []);
 
-  }, [])
-
-  return firebaseUser !== false ? ( 
+  return firebaseUser !== false ? (
     <Router>
       <div className= "container mt-3">
         <Navbar firebaseUser={firebaseUser} />
@@ -41,7 +39,7 @@ const App = () => {
     </Router>
   ) : (
     <p>Loading ChinChin...</p>
-  )
-}
+  );
+};
 
 export default App;

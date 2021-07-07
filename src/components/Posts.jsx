@@ -88,9 +88,9 @@ const Posts = () => {
         name: post,
       });
       const arrayEdit = posts.map((item) =>
-        item.id === id
-          ? {id: item.id, date: item.date, name: post, like: like}
-          : item,
+        item.id === id ?
+          {id: item.id, date: item.date, name: post, like: like} :
+          item,
       );
       setPosts(arrayEdit);
       setEditMode(false);
@@ -126,9 +126,9 @@ const Posts = () => {
             />
             <button
               className={
-                editMode
-                  ? 'btn btn-warning btn-lg btn-block'
-                  : 'btn btn-success btn-block'
+                editMode ?
+                  'btn btn-warning btn-lg btn-block' :
+                  'btn btn-success btn-block'
               }
               type="submit"
             >
@@ -142,7 +142,7 @@ const Posts = () => {
           <ul className="list-group">
             {posts.length === 0 ? (
               <li className="list-group-item">
-                It's so pity, you don't have posts yet. Snif!
+                It`s so pity, you dont have posts yet. Snif!
               </li>
             ) : (
               posts.map((item) => (
@@ -176,5 +176,5 @@ const Posts = () => {
       </div>
     </div>
   );
-}
+};
 export default Posts;
