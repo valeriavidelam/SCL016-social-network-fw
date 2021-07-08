@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 import firebase from 'firebase/app';
 import {withRouter} from 'react-router-dom';
 import {MdHome, MdPerson} from 'react-icons/md';
-import logonav from '../assets/Images/logos/logonavbar.png';
+import logonav from '../assets/images/logos/logonavbar.png';
 
 const Navbar = (props) => {
   const SignOff = () => {

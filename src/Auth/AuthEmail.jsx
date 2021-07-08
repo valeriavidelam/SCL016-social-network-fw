@@ -65,6 +65,10 @@ const AuthEmail = () => {
             email: answer.user.email,
             uid: answer.user.uid,
           });
+      await firebase.firestore().collection(answer.user.email).add({
+        name: 'Post',
+        fecha: Date.now()
+      })
       setEmail('');
       setPass('');
       setError(null);
@@ -84,7 +88,7 @@ const AuthEmail = () => {
     <div className="mt-5">
       <h6 className="text-center">
         {
-                    isRegistration ? 'CREATE NEW ACCOUNT' : 'Login'
+          isRegistration ? 'CREATE NEW ACCOUNT' : 'Login'
         }
       </h6>
       <hr />
@@ -92,11 +96,11 @@ const AuthEmail = () => {
         <div className="col-12 col-sm-8 col-md-6 col-xl-4">
           <form onSubmit={toProcessData}>
             {
-                            error ? (
-                                <div className="alert alert-danger">
-                                  {error}
-                                </div>
-                            ) : null
+              error ? (
+                <div className="alert alert-danger">
+                  {error}
+                </div>
+              ) : null
             }
             <input
               type="email"
