@@ -1,13 +1,17 @@
 body {
-    font-family: 'Titillium Web', sans-serif
-  }
-  
-
-  .container {
-      
-    background-image: url(https://ibb.co/L03yzwP);
-    margin-top: 5px;
-    justify-content: center;
+    background-image: url(../assets/Images/background.jpg);
+    background-position:center;
+    background-size:cover;
     
+  }
 
+
+  .Container {
+    
+    margin-top: 5;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    background-position:left;
+    border-radius: 30px;
+  
   }

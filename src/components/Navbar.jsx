@@ -17,25 +17,25 @@ const Navbar = (props) => {
   };
 
   return (
-    <div className="navbar navbar-dark bg-dark">
+    <div className="navbar navbar-success bg-success">
       <img src={logonav} alt="logopage" to="/" exact></img>
       <div className="d-flex">
         {/* <NavLink className="btn btn-dark mr-2" to="/" exact>Logout</NavLink> */}
-        <NavLink className="btn btn-dark mr-2" to="/profile" exact>
+        <NavLink className="btn btn-success mr-2" to="/profile" exact>
           {''}
           <MdPerson />
         </NavLink>
         {props.firebase !== null ? (
-          <NavLink className="btn btn-dark mr-2" to="/home" exact>
+          <NavLink className="btn btn-success mr-2" to="/home" exact>
             <MdHome />
           </NavLink>
         ) : null}
         {props.firebase !== null ? (
-          <button className="btn btn-dark" onClick={() => SignOff()}>
+          <button className="btn btn-success" onClick={() => SignOff()}>
             Logout{''}
           </button>
         ) : (
-          <NavLink className="btn btn-dark mr-2" to="/" exact>
+          <NavLink className="btn btn-success mr-2" to="/" exact>
             Login
           </NavLink>
         )}
