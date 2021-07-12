@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
 import React from 'react';
 import Posts from './Posts';
 import { withRouter } from 'react-router';

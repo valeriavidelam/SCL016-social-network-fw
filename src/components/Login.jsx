@@ -1,8 +1,8 @@
 import React from 'react';
 import AuthGoogle from '../Auth/AuthGoogle';
 import AuthEmail from '../Auth/AuthEmail';
-import logo from '../assets/Images/logos/logo.png';
-import '../styles/Login.css'
+import logo from '../assets/images/logos/logo.png';
+import '../styles/Login.css';
 
 
 const Login = () => {

@@ -18,7 +18,7 @@ const Navbar = (props) => {
 
   return (
     <div className="navbar navbar-success bg-success">
-      <img src={logonav} alt="logopage" to="/" exact></img>
+      <img src={logonav} alt="logopage"></img>
       <div className="d-flex">
         {/* <NavLink className="btn btn-dark mr-2" to="/" exact>Logout</NavLink> */}
         <NavLink className="btn btn-success mr-2" to="/profile" exact>
