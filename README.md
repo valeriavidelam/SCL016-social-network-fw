@@ -1,15 +1,15 @@
-# CHIN·CHIN, do you want a drink? <br>
+# CHIN·CHIN 🥂 Do you want a drink? <br>
 ## Red social con Framework
+### Creado por Vanessa Cuenca & Valeria Videla 👩🏽‍💻👩🏽‍💻🥂
 
 ## Índice
 
 * [1. Tecnologías/Herramientas utilizadas](#1-tecnologías/herramientas-usadas)
-* [2. Live Demo](#2-live-demo)
-* [3. Preview](#3-preview)
-* [4. Definición del producto](#4-definición-del-producto)
-* [5. Historias de usuario/Features](#5-historias-de-usuario/features)
-* [6. Prototipo](#6-prototipo)
-* [7. Test de usabilidad](#7-test-de-usabilidad)
+* [2. Preview](#3-preview)
+* [3. Definición del producto](#4-definición-del-producto)
+* [4. Historias de usuario/Features](#5-historias-de-usuario/features)
+* [5. Prototipo](#6-prototipo)
+* [6. Test de usabilidad](#7-test-de-usabilidad)
 
 ***
 
@@ -22,13 +22,10 @@
 - CSS
 - GitHub
 
-## 2. Live Demo
-
-Puedes probar la página en 
 
 ## 3. Preview
 
- <!-- <img src="./src/assets/images/readme/memorymatchpreview.gif" alt="Preview" class="Preview"> -->
+<img src="./src/assets/images/readme/chinchinpreview.gif" alt="Preview" class="Preview">
 
 
 ## 4. Definición del producto
@@ -38,7 +35,7 @@ Puedes probar la página en
 Y qué pasaría, si a toda esta intención de crear e indagar haciendo recetas nuevas de cócteles le sumamos el poder interactuar con más personas en todo el mundo que andan creando y compartiendo recetas al igual que tú? No sería divertido poder compartir en directo con estas personas?
 
 ¡Nosotras creemos que sí! Y es por eso que nace <br>
-_**CHIN·CHIN**_ "Do you want a drink?"; <br>
+_**CHIN·CHIN**_ 🥂 "Do you want a drink?"; <br>
 Una red social para amantes de la coctelería y entusiastas novatos que buscan experimentar con nuevas recetas con pocos recursos.
 
 
@@ -123,38 +120,35 @@ _FEATURES: El usuario debe ser capaz de escribir posts en un muro y que a su vez
 
 ### Diseño de baja fidelidad
 
-<!-- <img src="./src/assets/images/readme/prototipo1.jpg" alt="Prototipo-baja-fidelidad"/> -->
+<img src="./src/assets/images/readme/prototipobf1.jpeg" alt="Prototipo-baja-fidelidad"/> 
 
 Se diseñó un prototipo que cumpliera con las condiciones básicas pedidas por los usuarios, que sea 
-interactivo y de fácil acceso. 
-Buscamos un logo que aludiera al objetivo de la Red Social, y en base a esto se generaron opciones complementando con paletas de colores en tonos verdes.
+interactivo y de fácil acceso. A esta primera interacción le buscamos una estética lúdica que incentivara el uso de la red social.
 
-<!-- <img src="./src/assets/images/readme/color-palette.png" alt="Color-palette"/> -->
 
 ### Diseño de alta fidelidad
 
-Con la propuesta de color y el diseño más aterrizado, se creo una versión digital de alta fidelidad.
+El primer acercamiento al diseño fue un prototipo de alta fidelidad que en su primera versión incorporaba un diseño aludiendo a un bar
 
 <img src="./src/assets/images/readme/Figma1.png" alt="Prototipo-alta-fidelidad"/>
+
+Sin embargo, luego de feedback con usuarios acordes a nuestro público objetivo y diferentes iteraciones con usuarios llegamos a una segunda versión
+
 <img src="./src/assets/images/readme/Figma2.png" alt="Prototipo-alta-fidelidad"/>
 
-<!-- <a href="https://www.figma.com/proto/Xv0RGO1ZEFsL9VgDukciNR/Untitled?node-id=23%3A2&scaling=min-zoom& -->
-<!-- page-id=0%3A1" rel="nofollow">Click aquí para ver el prototipo completo.</a> -->
-<!--  -->
+En base a esta nueva versión se generaron opciones complementando con paletas de colores en tonos verdes.
+
+<img src="./src/assets/images/readme/color-palette.png" alt="Color-palette"/>
+
 ### Diseño final
 
         - Versión Desktop
 
-<!-- <img src="./src/assets/images/readme/desktop2.png" alt="Versión-final-desktop"/>  -->
-<!--  -->
+ <img src="./src/assets/images/readme/desktop2.png" alt="Versión-final-desktop"/>  -->
+
 
 
 
 ## 7. Test de usabilidad
-
-<!-- <img src="./src/assets/images/readme/Testdeusabilidad.png" alt="Test-de-usabilidad"  -->
-<!-- class="Test-de-usabilidad"/> -->
-<!--  -->
-<!-- Bajo este testeo de usabilidad, se detectan una serie de errores a implementar para la mejora del  -->
-<!-- producto final. Entre ellos se destaca: -->
-<!--  -->
+ 
+El producto sigue en construcción para ir mejorando la calidad y la experiencia para el usuario.
