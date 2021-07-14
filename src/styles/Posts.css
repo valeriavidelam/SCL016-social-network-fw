@@ -1,0 +1,23 @@
+.divAddPost {
+   
+  margin-top: 5;
+  position: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  height: 159px;
+  top: 188px;
+
+}
+
+.divPosts {
+
+margin-top: 5;
+position: center;
+text-align: center;
+background: rgba(255, 255, 255, 0.95);
+border-radius: 30px;
+height: 324px;
+left: 288px;
+top: 377px;
+}

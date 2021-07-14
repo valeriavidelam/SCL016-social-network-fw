@@ -1,6 +1,7 @@
 import React from 'react';
 import {firebase} from '../firebase';
 import {BsHeartFill} from 'react-icons/bs';
+import '../styles/Posts.css';
 
 
  
@@ -152,13 +153,13 @@ function Posts() {
   //    }
 
     return (
-        <div className="container mt-5">
+        <div className="divAddPost">
             <hr/>
             <div className= "row-3">
                 <div className="md-5">
                     <h3>
                         {
-                            editMode ? 'Edit your post here' : 'Add new post'
+                            editMode ? 'Edit your post here' : 'Do you want to say something?'
                         } 
                     </h3>
                     <form onSubmit={editMode ? edit : send}>
@@ -187,7 +188,7 @@ function Posts() {
                     </form>
                 </div>
                 <hr/>
-                     <div className="col px-md-5">
+                     <div className="divPosts">
                      <h4 className="text-center">MOST RECENTLY</h4>
                         <ul className="list-group">
                             {

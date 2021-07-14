@@ -4,18 +4,18 @@ import { withRouter } from 'react-router';
 
 const Home = () => {
 
-   const saludo = 'Do you want to say something?'
+   //const saludo = 'Do you want to say something?'
  
     return ( 
         <div className='mt-5 text-center'>
-           <h3 className="text-center">Ruta Protegida</h3>
+           {/* <h3 className="text-center">Ruta Protegida</h3> */}
            {/* {
             user && (
                
                <Post user={user.email} />
             )
            } */}
-           <h2> {saludo} </h2>
+           {/* <h2> {saludo} </h2> */}
            <Posts />
         </div>
      );

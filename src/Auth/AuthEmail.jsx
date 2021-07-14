@@ -117,14 +117,14 @@ const AuthEmail = () => {
               value={pass}
             />
             <button
-              className="btn btn-success btn-lg btn-block mx-2"
+              className="btn btn-success btn-lg btn-block mx-2 mb-2"
               type="submit">
               {
                 isRegistration ? 'SIGN UP' : 'LOG IN'
               }
-            </button>
+            </button><br></br>
             <button
-              className="btn btn-dark btn-sm btn-block"
+              className="btn btn-dark btn-sm btn-block mb-2"
               onClick={() => setIsRegistration(!isRegistration)}
               type="button"
             >
