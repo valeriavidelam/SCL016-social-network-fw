@@ -32,6 +32,18 @@ const App = () => {
     fetchUser()
   }, [])
 
+  // const PrivateRoute = ({component, path, ...rest}) =>{
+  //   if(localStorage.getItem('user')){
+  //     const userStorage = JSON.parse(localStorage.getItem('user'))
+  //     if(userStorage.uid === firebaseUser.uid){
+  //       return <Route component={component} path={path}  />
+  //     }else{
+  //       // return <Redirect to="/" {...rest}/>
+  //     }
+  //   }else{
+  //     return <Redirect to="/" {...rest}/>
+  //   }
+  // }
 
   return firebaseUser !== false ? (
     <Router>
